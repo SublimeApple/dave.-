@@ -1,4 +1,4 @@
-baseurl = "dave.xn--tckwe/"
+baseurl = "https://dave.xn--tckwe/"
 languageCode = "en-us"
 theme = "hello-friend"
 paginate = 5
@@ -15,7 +15,6 @@ paginate = 5
 [languages]
   [languages.en]
     title = "dave's site"
-    subtitle = "A simple theme for Hugo"
     keywords = "dave davide montali davebit"
     copyright = ""
     menuMore = "Show more"
