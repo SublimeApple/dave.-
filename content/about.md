@@ -1,0 +1,45 @@
+# Hello, this is dave
+
+I'm based out of LX (Lisboa).
+
+I sporadically write some posts here, moslty just for myself. I'm trying to understand computers and algorithms - particularly computer heuristics. I'm not at all interested in marketing / bank / insurance data stuff.
+
+My online presence:
+
+GitHub: https://github.com/SublimeApple
+
+Twitter: https://twitter.com/davebit_
+
+
+You can contact me at dave.gl (just change the a for an @)
+
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQENBFinUyEBCADDtNOrYJGfd1kfbatj1J4HsKuZwAnvvb9RFkB2qOqMUxKZ7i8X
+tcnFUdjbJekPf82T34/a+csRZu8TgOzWrlj0LlQdXKo5ZN+UypE9r2LGXqKdECOY
+sgvhS1TsmM73IrzxgmBewfw4N/72ouXHSRJAYzMjr+0JoSXbjaPwlWJpSRUQRMdp
+3349UOSjHOBamj74usp2xWuIO0VXKt0CotQSq/eWPcCEs/h/5KlQRIhtwMDzISul
+RAOD/tRln5hMOcFFX/MGtCKwvApbRhaiu1PwsEIYWopkjCy28y9yEKNivFWhmc2a
+dWi+HHtNDezM8Yaq7cI1mpPq4ggmC544rst1ABEBAAG0EWRhdmViaXQgPGRAdmUu
+Z2w+iQE5BBMBCAAjBQJYp1MhAhsDBwsJCAcDAgEGFQgCCQoLBBYCAwECHgECF4AA
+CgkQ1NjEsOLngYrIOAgAk0u90YBBCyuXb3bUx7OzPZjWyv98gMG+fN2Am6etlJYf
+88nk96+faBFkQWVAp9UxHvOO86uklsot3uAYV7lulgNjFPq8hQz/PrdPcdn1gG4Z
+cFBJ2oN9ggzdD0VveYh9p2WWOtrpjCN0QcRFpQO8OltqXOv4w5H0r8pcyNbzmYyq
+Fe65+Pcxyf7+etgUBaWiAnHzXcEdlvd5iBX9WmUQDCvYcpR9mbbMEhrbvZcTEnSW
+g1G+J8YzWL8asbsOtsnCfByBG2uB2TrxVd+ji3ZaEVA5XQLaoki1PmyaSm5dv2Ek
++lXXhyIczZLakct2/f6lcRcYYWdYRWd8VgaSvh2nqLkBDQRYp1MhAQgAppsUYJF7
+2I4Gas++4jCUXPf9UHzZvmHSsysX8xGEjIVezAR4GXdYZR38DV4EW8F5C5dPjx6Z
+jpegjqWfqiPRpn/sa2YY8wB6n0SjQ+33EG1cSskhZyPV0na4NRxx5cvQU73UnjXY
+CaCUVSGdFuQ3kUGMUN8xMIWIgAAyDNO9pCBbiXp3qvckQyUK3Y9g6tNBe6lA9dvW
+c6zRZFjWYbcO9a4sxNvPPwQVZNbBxa/np/uF3XxBbdrlCGjVDwN0HbWmGBhNnoyR
+wv3rz+mB+cD9JnDYkF2OOU5CzG6VNjqc8tpmkVlZexnUqSe29KzIcxnEtJmpVU8s
+5W6RdE3nW3LwOQARAQABiQEfBBgBCAAJBQJYp1MhAhsMAAoJENTYxLDi54GKJ2II
+AIomCRYvKNcQJc/DM07Uq8ndaYBEHX+T++Lc9fSyFuICgpAfk98+fc66YX67IMc4
+JKZ4PcuQJKGpzZuYwlyXfFbdOz5jhrF1IGz/6UaykD0JlrUb8CRuprJCRFjOLhF7
+REw7snLPhnj9M/FyHbIUj6ISYTKiRuXlYenXwtj5cchRyEAu8VoKJlAzC9v4ncpy
+yqSRoS9Q7/rLdvQ/Kq12sRhNQ4gOlnZSGgW6hPKy7cdDqIe7F29Zz6Ala/kqE+Dg
+q6wCMNucJYtYMYyJKZDm1dRPrkjKVkg5U82njsrHP7V8lZEUv/aNWesF6uJpiS7q
+137MHjJSp9OKije5OA15qL8=
+=xDlU
+-----END PGP PUBLIC KEY BLOCK-----
