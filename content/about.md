@@ -1,3 +1,8 @@
+---
+title: "about"
+author: "Dave"
+---
+
 # Hello, this is dave
 
 I'm based out of LX (Lisboa).
