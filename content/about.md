@@ -2,7 +2,7 @@
 
 I'm based out of LX (Lisboa).
 
-I sporadically write some posts here, moslty just for myself. I'm trying to understand computers and algorithms - particularly computer heuristics. I'm not at all interested in marketing / bank / insurance data stuff.
+I sporadically write some posts here, moslty just for myself. I'm trying to understand computers and algorithms - particularly computer heuristics.
 
 My online presence:
 
