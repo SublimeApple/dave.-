@@ -16,24 +16,24 @@ Python code:
 ```
 import numpy.random as np
 
-## Generate a random positive INT
+# Generate a random positive int
 x = np.randint(50000)
 x_binary = []
 
-## Use modular arithmetic to determine the presence of a remainder
+# Use modular arithmetic to determine the presence of a remainder
 while x > 0:
-    if x%2 == 1:
+    if x % 2 == 1:
         x_binary.append(1)
-        x = int(x / 2) ## int() cuts off the remainder
+        x = x // 2 # floor division removes remainder
     else:
         x_binary.append(0)
         x = x / 2
 
-## Because we used append above (more memory efficient than insert)
-## we now simply reverse the list to get the the correct order
+# Because we used append above (more memory efficient than insert)
+# we now simply reverse the list to get the the correct order
 x_binary.reverse()
 
-## Turn list into string before printing
+# Turn list into string before printing
        
 print("".join(str(e) for e in x_binary))
 ```
