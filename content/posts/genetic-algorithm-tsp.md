@@ -1,19 +1,21 @@
 ---
 title: "Python, GAs, TSP and a lot of Optimization"
-date: 2020-01-23T20:35:31Z
+date: 2020-02-03T11:00:00Z
 author: "Dave"
 cover: "/img/network.jpg"
-draft: true
+draft: false
 description: A python library for constraing optimization problems with a number of implementations for genetic algorithm operators...
 ---
 
-Over the xmas holidays together with some friends we built a python library for Genetic Algorithms (GAs), specifically aimed at contraint optimization problems. The core focus was on building a well-performing GA for solving the Travelling Salesman Problem (TSP). TSP is a commonly studied NP-hard problem in computational optimization, essentially given a list of cities we need to determine the best possible route - the shortest possible route.
+Together with some friends we built a python library for Genetic Algorithms (GAs), specifically aimed at contraint optimization problems. The core focus was on building a well-performing GA for solving the Travelling Salesman Problem (TSP). TSP is a commonly studied NP-hard problem in computational optimization; essentially, given a list of cities we need to determine the best possible route - the shortest possible route.
 
-The code can be found at: https://github.com/SublimeApple/CIFO_Project
+The code can be found at: https://github.com/daveai/GA_Library
 
-First of all we set down the decision variables for the TSP GA, classic TSP determines that cities should be visited only once and that the salesman return to their original destination. To encode this we simply used a permutation of the length of total cities. We include the "home-trip" in the fitness function (the function which calculates the distance, which in our case represents the fitness of the solution). Given that we want to minimize the distance, it's important to note that all the methods we implemented work with both minimization and maximization contraint optimization problems. 
+The team: [daveai](https://github.com/daveai) - [ruifcruz](https://github.com/ruifcruz) - [GustavoFabricio](https://github.com/GustavoFabricio) - [statoconfusionale](https://github.com/statoconfusionale)
 
-For the city data, we implemented our GA to work both with a matrix of coordinates, as well as by simply supplying the coordinates of the cities from which we then build a matrix of coordinates. From our research TSP, doesn't specify a starting city, which means there are at least as many global solutions as there are cities - as the global optima permutation would have the same fitness starting at any city within that permutation.
+Firstly, we set down the decision variables for the TSP GA. Classic TSP determines that cities should be visited only once and that the salesman return to their original destination at the end of the trip. To encode this we simply used a permutation of the length of total cities. We include the "home-trip" in the fitness function (the function which calculates the distance, which in our case represents the fitness of the solution). Given that we want to minimize the distance, it's important to note that all the methods we implemented work with both minimization and maximization contraint optimization problems. 
+
+For the city data we implemented our GA to work both with a matrix of coordinates, as well as simply supplying the coordinates of the cities - from which we then build a matrix of coordinates. From our research in the literature, TSP doesn't typically specify a starting city, which means there are at least as many global solutions as there are cities - as the global optima permutation would have the same fitness starting at any city within that permutation.
 
 ```
 from scipy.spatial.distance import squareform, pdist
@@ -30,7 +32,7 @@ def coordsToDist(coords):
     return squareform(dist_array)
 ```
 
-To initialize a "tour" we implemented two methods a purely stochastic one, where we simply create a random permutation, as well as a deterministic one, which creates a tour by selecting a random city and then always appending it's nearest available neighbour. The only constraint of TSP is the fact that a tour be a permutation. See:
+To initialize a "tour" we implemented two methods: a purely stochastic one, where we simply create a random permutation, as well as a deterministic one, which creates a tour by selecting a random city and then always appending its nearest available neighbour. The only constraint of TSP is that a tour be a permutation.
 
 ```
 def build_solution(self):
@@ -56,9 +58,9 @@ def build_solution(self):
     return solution
 ```
 
-When thinking about the TSP GA we wanted to get good fitness, but also find good fitness quickly. Therefore, we constantly profiled our code and managed to reduce execution time by roughly 85% by keeping computational intensity in mind.
+When thinking about the TSP GA we wanted to achieve good fitness, but also find solutions quickly. Therefore, we constantly profiled our code and managed to reduce execution time by roughly 85% by keeping computational intensity in mind, with some minor memory enhancements. Initally all new offsprings were deepcopied - and since individuals were classes, deepcopy recursively iterated over every individual. We instead implemented a simple_copy function within the class, which is much quicker yet preserves all the metadata of the offspring.
 
-We implemented all of the operators below (these were implemented agnostically from TSP, and can be simply extended to work on any GA problem):
+We implemented all of the operators below (these were implemented agnostically from TSP, and can be simply used with any GA problem):
 
 ![](/img/tsp_implementations.png)
 
@@ -68,7 +70,7 @@ As we can see the GA comes close to global optima in most datasets, and it does 
 
 ![](/img/tsp_bench.png)
 
-We also coded a GA Optimizer GA, which ran over a number of hours to fine tune the parameters of our TSP GA, the optimal parameters we found are these:
+We also coded a GA Optimizer GA (a GA to optimize the parametrers of our TSP GA), which ran over a number of hours to fine tune the parameters of our TSP GA, the optimal parameters we found are these:
 
 ```
 Parameters: {
@@ -84,7 +86,7 @@ Parameters: {
     "Replacement-Approach": elitism_replacement}
 ```
 
-It intuitively makes sense that crossover has a low probability given that with cities gradual improvements through mutations make more sense than a full reshuffle of a tour. Imagine we're at the final generations and have a decent fitness, it's more likely we can "close an edge" through mutation and incrase fitness than by using crossover which will alter the position of many cities.
+It intuitively makes sense that crossover has a low probability given that a tour makes gradual improvements through mutations, and crossovers move more citites around. Imagine for instance we're at the final generations and have a decent fitness, it's more likely we can "close an edge" through mutation and incrase fitness than by using crossover which will alter the position of many cities. This holds true even with specific crossover techniques aimed specifically at TSP.
 
 For futher reading on TSP and GAs I can recommend:
 
