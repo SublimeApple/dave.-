@@ -1,10 +1,12 @@
 ---
-title: "Binary Transformation"
+title: Binary Transformation
 date: 2019-09-15T21:31:10+01:00
-author: "Dave"
-cover: "/img/binary.webp"
+author: Dave
+cover: /img/binary.webp
 draft: false
 description: Notes on how to turn a base10 number into a binary, base2, one. Small python script to turn a randomly generated base10 number into binary. While procrastinating on the web...
+images: 
+- /img/binary.webp
 ---
 
 While procrastinating on the web - I learnt some cool, yet probably useless, stuff: how to turn any base 10 number into a binary, base2, number. It's surprisingly easy.
