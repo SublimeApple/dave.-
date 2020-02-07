@@ -4,7 +4,9 @@ date: 2020-02-03T11:00:00Z
 author: "Dave"
 cover: "/img/network.jpg"
 draft: false
-description: A python library for constraing optimization problems with a number of implementations for genetic algorithm operators...
+description: A python library for constraint optimization problems with a number of implementations for genetic algorithm operators...
+images: 
+- /img/network.jpg
 ---
 
 Together with some friends we built a python library for Genetic Algorithms (GAs), specifically aimed at contraint optimization problems. The core focus was on building a well-performing GA for solving the Travelling Salesman Problem (TSP). TSP is a commonly studied NP-hard problem in computational optimization; essentially, given a list of cities we need to determine the best possible route - the shortest possible route.
@@ -12,6 +14,8 @@ Together with some friends we built a python library for Genetic Algorithms (GAs
 The code can be found at: https://github.com/daveai/GA_Library
 
 The team: [daveai](https://github.com/daveai) - [ruifcruz](https://github.com/ruifcruz) - [GustavoFabricio](https://github.com/GustavoFabricio) - [statoconfusionale](https://github.com/statoconfusionale)
+
+We built our GAs ontop of the core framework provided by [Fernando Perez](https://www.linkedin.com/in/fernando-peres-origamiai/)
 
 Firstly, we set down the decision variables for the TSP GA. Classic TSP determines that cities should be visited only once and that the salesman return to their original destination at the end of the trip. To encode this we simply used a permutation of the length of total cities. We include the "home-trip" in the fitness function (the function which calculates the distance, which in our case represents the fitness of the solution). Given that we want to minimize the distance, it's important to note that all the methods we implemented work with both minimization and maximization contraint optimization problems. 
 
