@@ -9,9 +9,9 @@ images:
 - /img/hotel.jpg
 ---
 
-Somehow, I've always liked the idea of Hotel Tonight. For those who don't know about Hotel Tonight, it's an app where you can book last-second hotel rooms. The idea revolves around the perishability of hotel rooms and Revenue Managers wanting to increase RevPAR (Revenue Per Available Room). Hotel Tonight has been quite successful, so much that in fact that it was acquired by Airbnb for $400 Million. 
+Somehow, I've always liked the idea of Hotel Tonight. For those who don't know about Hotel Tonight, it's an app where you can book last-second hotel rooms. The idea revolves around the perishability of hotel rooms and Revenue Managers wanting to increase RevPAR (Revenue Per Available Room). Hotel Tonight has been quite successful, so much in fact that it was acquired by Airbnb for $400 Million. 
 
-Whenever I'm travelling and know I'll need a room - I tend to go for Hotel Tonight, but I always wonder how long I should wait to book? Should I wait as long as possible? Should I book now, to make sure I'll definitely get a room?
+Whenever I'm travelling and know I'll need a room, I tend to go for Hotel Tonight. But I always wonder how long I should wait to book? Should I wait as long as possible? Should I book now, to make sure I'll definitely get a room?
 During the day I'll reload the app various times, but completely forget what the previous prices were. So I decided to use my free 1H compute power on scrapinghub to get some data on the matter.
 
 I made a simple (extremely simple) scrapy spider to scrape the prices for hotels in Lisbon, listed on Hotel Tonight:
@@ -72,3 +72,5 @@ Daily breakdown:
 It looks like my hypothesis holds for some of the hotels, yet others seem to have algorithmic pricing - at least it looks like that to me, particularly with the zig-zag pricing during the night. However, to cut a long story short it looks like it's worth waiting til past 6pm local time, when the revenue manager finishes their shift and hopes to come to work the following day with a higher RevPAR :)
 
 Prices at most hotels appear to drop at least €10 by 6pm - that's 4 large beers in a Lisbon bar!
+
+In the future I might look at different cities, and also collect data over a vaster period of time - but for now I'll go and have one of those 4 large beers I'll save next time I book a hotel. 
