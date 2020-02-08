@@ -11,7 +11,7 @@ images:
 
 While procrastinating on the web - I learnt some cool, yet probably useless, stuff: how to turn any base 10 number into a binary, base2, number. It's surprisingly easy.
 
-Given any number x, we recursively divids x by 2 until we reach 0. We deal only in integers. If division returns an even number the binary value is 0, if division returns an odd number the binary value is 1 (which is equal to the remainder of the division). The binary value is given by inverting the order of the results.
+Given any number x, we recursively divides x by 2 until we reach 0. We deal only in integers. If division returns an even number the binary value is 0, if division returns an odd number the binary value is 1 (which is equal to the remainder of the division). The binary value is given by inverting the order of the results.
 
 Python code:
 

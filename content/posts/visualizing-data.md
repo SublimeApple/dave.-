@@ -11,7 +11,7 @@ Together with some friends, we did a "hackathon" project of building an interact
 
 I guess this is also a good point to state that: "There are legitimate uses for offshore companies and trusts. We do not intend to suggest or imply that any people, companies or other entities included in the ICIJ Offshore Leaks Database have broken the law or otherwise acted improperly."
 
-First of all we downloaded all the data avaiable, which was already nicely formatted. For simplicity we only used the panama papers leak (mostly due to using a free heroku dyno). We imported the data into pandas, and looked to reduce the size of the dataframe through both redundency and irrelevancy.
+First of all we downloaded all the data available, which was already nicely formatted. For simplicity we only used the panama papers leak (mostly due to using a free heroku dyno). We imported the data into pandas, and looked to reduce the size of the dataframe through both redundancy and irrelevancy.
 
 ```
 import pandas as pd
