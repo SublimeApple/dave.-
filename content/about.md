@@ -1,12 +1,10 @@
 ---
-title: "about"
+title: "hello, this is dave"
 ---
-
-# hello, this is dave
 
 I'm based out of LX (Lisboa).
 
-I sporadically write some posts here, moslty just for myself. I'm trying to understand computers and algorithms - particularly computer heuristics.
+I sporadically write some posts here, mostly just for myself. I'm trying to understand computers and algorithms - particularly computer heuristics.
 
 My online presence:
 
@@ -14,8 +12,9 @@ GitHub: https://github.com/SublimeApple
 
 Twitter: https://twitter.com/davebit_
 
+LinkedIn: https://www.linkedin.com/in/daveai
 
-You can contact me at dave.gl (just change the a for an @)
+You can contact me at dave.gl (just replace the a for an @)
 
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
