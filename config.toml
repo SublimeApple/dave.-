@@ -16,7 +16,7 @@ paginate = 5
 
 [social]
   twitter = "davebit_"
-  linkedin = "davmontali"
+  linkedin = "daveai"
 
 [languages]
   [languages.en]
@@ -34,7 +34,7 @@ paginate = 5
     dateFormatList = "Monday, 2 Jan, 2006"
 
     [languages.en.params.logo]
-      logoText = "dave montali"
+      logoText = "dave"
       logoHomeLink = "/"
     # or
     #
