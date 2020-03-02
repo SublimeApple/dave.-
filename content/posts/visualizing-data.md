@@ -1,10 +1,12 @@
 ---
 title: "Visualizing the Panama Papers"
-date: 2020-01-23T20:40:31Z
+date: 2020-03-02T10:30:00Z
 author: "Dave"
 cover: "/img/money.jpg"
-draft: true
-description: Using Dash by Plotly to visualize the panama papers...
+draft: false
+description: Using Dash by Plotly to visualize the panama papers based on jurisdiction popularity and companies opened...
+images: 
+- /img/money.jpg
 ---
 
 Together with some friends, we did a "hackathon" project of building an interactive analytical app and deploying it within a day. We looked across the web for some data we could visualize, and highly influenced by Steven Soderbergh's The Laundromat we had seen on Netflix recently, decided to use the data made available by the ICIJ on offshore tax haven leaks.  The data was retrieved from ICIJ Offshore Leaks Database at https://offshoreleaks.icij.org
@@ -34,7 +36,7 @@ pp.drop(indexes, inplace=True)
 pp.dropna(inplace=True)
 ```
 
-We then created our first plot which allows the visitor to select the countries they are interested in and see how many companies have been opened the selected jurisdiction during the given year range. Anecdotally, we found the peaks and drops correspond with global tax crackdowns or scandals. The purpose of the tool is to be used as an exploratory tool.
+We then created our first plot which allows the visitor to select the countries they are interested in and see how many companies have been opened in the selected jurisdictions during the given year range. Anecdotally, we found the peaks and drops correspond with global tax crackdowns or scandals. The purpose of the tool is to be used as an exploratory tool.
 
 
 ![](/img/panama_jurisdiction.png)
