@@ -8,7 +8,7 @@ I sporadically write some posts here, mostly just for myself. I'm trying to unde
 
 My online presence:
 
-GitHub: https://github.com/SublimeApple
+GitHub: https://github.com/daveai
 
 Twitter: https://twitter.com/davebit_
 
