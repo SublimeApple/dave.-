@@ -2,11 +2,11 @@
 title: "hello, this is dave"
 ---
 
-I'm based out of LX (Lisboa).
+Based out of LX (Lisboa).
 
-I sporadically write some posts here, mostly just for myself. I'm trying to understand computers and algorithms - particularly computer heuristics.
+Sporadically writes some posts here.
 
-My online presence:
+Online presence:
 
 GitHub: https://github.com/daveai
 
