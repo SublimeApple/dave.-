@@ -2,6 +2,3 @@
 	path = public/public
 	url = git@github.com:SublimeApple/dave.-.git
 	branch = master
-[submodule "themes/hello-friend"]
-	path = themes/hello-friend
-	url = https://github.com/panr/hugo-theme-hello-friend.git
