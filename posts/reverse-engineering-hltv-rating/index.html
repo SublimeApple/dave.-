@@ -179,7 +179,7 @@ class HLTVSpider(scrapy.Spider):
             'impact': response.xpath('/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[3]/div[1]/div[2]/div[1]/text()').get(),
             'adr': response.xpath('/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[3]/div[2]/div[2]/div[1]/text()').get(),
         }
-</code></pre><p>Great - now we have some initial data to work with. First of all, let&rsquo;s drop all players with 1.0 rating as we don&rsquo;t care about that rating. The data needs some minor cleaning, but that&rsquo;s done quickly. We just want all our data to be numbers - so we need to remove the % sign from KAST. I clean data in an interactive shell, so don&rsquo;t have the snippet. But something as simple as .rstrip('%') should do the job.</p>
+</code></pre><p>Great - now we have some initial data to work with. First of all, let&rsquo;s drop all players with 1.0 rating as we don&rsquo;t care about that rating. The data needs some minor cleaning, but that&rsquo;s done quickly. We just want all our data to be numbers - so we need to remove the % sign from KAST. I clean data in an interactive shell, so I don&rsquo;t have the snippet. But something as simple as .rstrip('%') should do the job.</p>
 <p>Sweet, we have clean data now. Let&rsquo;s move on.</p>
 <p>We&rsquo;ve assumed a linear function, so let&rsquo;s try to simply regress the data with a linear regression - the easiest and simplest way to approach this. While simple, linear regression will give us coefficients which are those weights we want to multiply our variables by before adding them together. In other words, it makes everything very interpretable. We can explore more complex models later on, if required.</p>
 <pre><code>import pandas as pd
@@ -214,7 +214,7 @@ R2 score:0.9950699964985316
 RMSE:0.0037901282685042156
 MAE:0.0029042242484068797
 </code></pre><p>Hold up. That doesn&rsquo;t look too bad. A couple of things that stand out to me are the 0.995 R2 score, that both error measures are smaller than 0.01, and that we have a negative coefficient? Let&rsquo;s take a look further at what&rsquo;s going on there.</p>
-<p>The errors are interesting, becuase ratings only have 2 decimal places. So maybe if we round our predictions to 2 decimal places, we&rsquo;ll get a better result? Oh - and I just checked the data and the third variable - which was given a negative coefficient - is deaths per round. That makes sense, the less you die the better your rating.</p>
+<p>The errors are interesting, because ratings only have 2 decimal places. So maybe if we round our predictions to 2 decimal places, we&rsquo;ll get a better result? Oh - and I just checked the data and the third variable - which was given a negative coefficient - is deaths per round. That makes sense, the less you die the better your rating.</p>
 <p>Let&rsquo;s print some of the test data, to visually see our errors:</p>
 <pre><code>Actual: 1.1; Predicted: 1.1; Error: 0.0
 Actual: 0.99; Predicted: 0.99; Error: 0.0
@@ -242,7 +242,7 @@ Actual: 1.07; Predicted: 1.07; Error: 0.0
 Actual: 1.02; Predicted: 1.02; Error: 0.0
 Actual: 1.08; Predicted: 1.08; Error: 0.0
 Actual: 1.19; Predicted: 1.19; Error: 0.0
-</code></pre><p>That looks pretty good. We&rsquo;re only ever wrong by 0.01 - but overall we calculate most of the ratings correctly. As we saw above, HLTV claims that ratings are calculated differently for the CT and T side, which might explain why we don&rsquo;t have 100% correct predictions. But that&rsquo;s pretty decent for my standards, so here&rsquo;s the secret HLTV 2.0 formula (I slighlty rounded the coefficients down to make it prettier - full coefs are above):</p>
+</code></pre><p>That looks pretty good. We&rsquo;re only ever wrong by 0.01 - but overall we calculate most of the ratings correctly. As we saw above, HLTV claims that ratings are calculated differently for the CT and T side, which might explain why we don&rsquo;t have 100% correct predictions. But that&rsquo;s pretty decent for my standards, so here&rsquo;s the secret HLTV 2.0 formula (I slightly rounded the coefficients down to make it prettier - full coefs are above):</p>
 <pre><code>0.0071*KAST + 0.3876*KPR + -0.5412*DPR + 0.2285*Impact + 0.0031*ADR = Rating 2.0
 </code></pre><p>So how do you calculate your own 2.0 rating? Let&rsquo;s take a look at the variables:</p>
 <ul>
