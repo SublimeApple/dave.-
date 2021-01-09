@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on dave&#39;s site</title>
+    
+    
+    
+    <link>https://dave.xn--tckwe/posts/</link>
+    <description>Recent content in Posts on dave&#39;s site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Jan 2021 10:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dave.xn--tckwe/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reverse Engineering the HLTV 2.0 Rating</title>
+      <link>https://dave.xn--tckwe/posts/reverse-engineering-hltv-rating/</link>
+      <pubDate>Sat, 09 Jan 2021 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.xn--tckwe/posts/reverse-engineering-hltv-rating/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://dave.xn--tckwe/img/csgo.jpg&#34;/&gt;
+          
+        
+        
+        
+          Ever since HLTV released their new rating 2.0, they kept the formula behind the rating a secret.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Visualizing the Panama Papers</title>
+      <link>https://dave.xn--tckwe/posts/visualizing-data/</link>
+      <pubDate>Mon, 02 Mar 2020 10:30:00 +0000</pubDate>
+      
+      <guid>https://dave.xn--tckwe/posts/visualizing-data/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://dave.xn--tckwe/img/money.jpg&#34;/&gt;
+          
+        
+        
+        
+          Using Dash by Plotly to visualize the panama papers based on jurisdiction popularity and companies opened...
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>When should I book my room on Hotel Tonight?</title>
+      <link>https://dave.xn--tckwe/posts/hotel-tonight-prices/</link>
+      <pubDate>Sun, 16 Feb 2020 21:00:00 +0000</pubDate>
+      
+      <guid>https://dave.xn--tckwe/posts/hotel-tonight-prices/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://dave.xn--tckwe/img/hotel.jpg&#34;/&gt;
+          
+        
+        
+        
+          I really like Hotel Tonight, but I always wonder if I should wait for prices to drop further, so I scraped their site...
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Python, GAs, TSP and a lot of Optimization</title>
+      <link>https://dave.xn--tckwe/posts/genetic-algorithm-tsp/</link>
+      <pubDate>Mon, 03 Feb 2020 11:00:00 +0000</pubDate>
+      
+      <guid>https://dave.xn--tckwe/posts/genetic-algorithm-tsp/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://dave.xn--tckwe/img/network.jpg&#34;/&gt;
+          
+        
+        
+        
+          A python library for constraint optimization problems with a number of implementations for genetic algorithm operators...
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Binary Transformation</title>
+      <link>https://dave.xn--tckwe/posts/binary-transformation/</link>
+      <pubDate>Sun, 15 Sep 2019 21:31:10 +0100</pubDate>
+      
+      <guid>https://dave.xn--tckwe/posts/binary-transformation/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://dave.xn--tckwe/img/binary.webp&#34;/&gt;
+          
+        
+        
+        
+          Notes on how to turn a base10 number into a binary, base2, one. Small python script to turn a randomly generated base10 number into binary. While procrastinating on the web...
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

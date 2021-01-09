@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://dave.xn--tckwe/</loc>
+    <lastmod>2021-01-09T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dave.xn--tckwe/posts/</loc>
+    <lastmod>2021-01-09T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dave.xn--tckwe/posts/reverse-engineering-hltv-rating/</loc>
+    <lastmod>2021-01-09T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dave.xn--tckwe/posts/visualizing-data/</loc>
+    <lastmod>2020-03-02T10:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dave.xn--tckwe/posts/hotel-tonight-prices/</loc>
+    <lastmod>2020-02-16T21:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dave.xn--tckwe/posts/genetic-algorithm-tsp/</loc>
+    <lastmod>2020-02-03T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dave.xn--tckwe/posts/binary-transformation/</loc>
+    <lastmod>2019-09-15T21:31:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dave.xn--tckwe/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dave.xn--tckwe/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dave.xn--tckwe/tags/</loc>
+  </url>
+  
+</urlset>

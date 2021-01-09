@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Visualizing the Panama Papers :: dave&#39;s site</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Together with some friends, we did a &amp;ldquo;hackathon&amp;rdquo; project of building an interactive analytical app and deploying it within a day. We looked across the web for some data we could visualize, and highly influenced by Steven Soderbergh&amp;rsquo;s The Laundromat we had seen on Netflix recently, decided to use the data made available by the ICIJ on offshore tax haven leaks. The data was retrieved from ICIJ Offshore Leaks Database at https://offshoreleaks."/>
+<meta name="keywords" content="dave davide montali davebit"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://dave.xn--tckwe/posts/visualizing-data/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://dave.xn--tckwe/assets/style.css">
+
+<link rel="stylesheet" href="https://dave.xn--tckwe/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://dave.xn--tckwe/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://dave.xn--tckwe/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dave.xn--tckwe/img/money.jpg"/>
+
+<meta name="twitter:title" content="Visualizing the Panama Papers"/>
+<meta name="twitter:description" content="Using Dash by Plotly to visualize the panama papers based on jurisdiction popularity and companies opened..."/>
+<meta name="twitter:site" content="@davebit_"/>
+
+
+
+<meta property="og:title" content="Visualizing the Panama Papers" />
+<meta property="og:description" content="Using Dash by Plotly to visualize the panama papers based on jurisdiction popularity and companies opened..." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dave.xn--tckwe/posts/visualizing-data/" />
+<meta property="og:image" content="https://dave.xn--tckwe/img/money.jpg" />
+<meta property="article:published_time" content="2020-03-02T10:30:00+00:00" />
+<meta property="article:modified_time" content="2020-03-02T10:30:00+00:00" /><meta property="og:site_name" content="dave&#39;s site" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">dave</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title"><a href="https://dave.xn--tckwe/posts/visualizing-data/">Visualizing the Panama Papers</a></h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          Monday, 2 Mar, 2020
+        </span>
+
+        
+          
+        
+      
+
+      <span class="post-author">— Written by Dave</span>
+      
+    </div>
+
+    
+
+    
+      <figure class="post-cover">
+        
+          <img src="https://dave.xn--tckwe/img/money.jpg" alt="Visualizing the Panama Papers" />
+        
+
+        
+      </figure>
+    
+
+    <div class="post-content">
+      
+      <p>Together with some friends, we did a &ldquo;hackathon&rdquo; project of building an interactive analytical app and deploying it within a day. We looked across the web for some data we could visualize, and highly influenced by Steven Soderbergh&rsquo;s The Laundromat we had seen on Netflix recently, decided to use the data made available by the ICIJ on offshore tax haven leaks.  The data was retrieved from ICIJ Offshore Leaks Database at <a href="https://offshoreleaks.icij.org">https://offshoreleaks.icij.org</a></p>
+<p>I guess this is also a good point to state that: &ldquo;There are legitimate uses for offshore companies and trusts. We do not intend to suggest or imply that any people, companies or other entities included in the ICIJ Offshore Leaks Database have broken the law or otherwise acted improperly.&rdquo;</p>
+<p>First of all we downloaded all the data available, which was already nicely formatted. For simplicity we only used the panama papers leak (mostly due to using a free heroku dyno). We imported the data into pandas, and looked to reduce the size of the dataframe through both redundancy and irrelevancy.</p>
+<pre><code>import pandas as pd
+
+pp = pd.read_csv('csv_panama_papers/panama_papers.nodes.entity.csv')
+
+# Transform the provided data into a pandas date type
+pp[&quot;incorporation_date&quot;] = pd.to_datetime(pp[&quot;incorporation_date&quot;])
+pp['year'], pp['month'] = pp['incorporation_date'].dt.year, pp['incorporation_date'].dt.month
+
+# Remove irrelevant features
+pp.drop([&quot;name&quot;, &quot;inactivation_date&quot;, &quot;struck_off_date&quot;, &quot;ibcRUC&quot;,
+        &quot;status&quot;, &quot;company_type&quot;, &quot;valid_until&quot;, &quot;note&quot;, &quot;closed_date&quot;], axis=1, inplace=True)
+
+# Drop leaks before the 80s, only Panama companies and few in numbers
+indexes = pp[pp[&quot;year&quot;] &lt; 1980].index.to_list()
+
+# Drop any remaining None values
+pp.drop(indexes, inplace=True)
+pp.dropna(inplace=True)
+</code></pre><p>We then created our first plot which allows the visitor to select the countries they are interested in and see how many companies have been opened in the selected jurisdictions during the given year range. Anecdotally, we found the peaks and drops correspond with global tax crackdowns or scandals. The purpose of the tool is to be used as an exploratory tool.</p>
+<p><img src="/img/panama_jurisdiction.png" alt=""></p>
+<p>We also created a sankey flow, to see the most popular tax haven jurisdictions per country. In other words, by selecting Brazil we can see the most popular offshore jurisdictions in Brazil, this can also be adjusted for a custom year range. We also show the most notable people found in the leaks, as reported by ICIJ, as a small visualization.</p>
+<p><img src="/img/panama_brazil.png" alt=""></p>
+<p>To play around with the website, you can visit it at <a href="https://nuova-ims.herokuapp.com/">https://nuova-ims.herokuapp.com/</a> However, it&rsquo;s running on a free-tier dyno at the moment, so it&rsquo;ll probably be extremely slow / almost unusable. I will look into hosting side-projects on AWS lambda in the future perhaps.</p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://dave.xn--tckwe/posts/reverse-engineering-hltv-rating/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Reverse Engineering the HLTV 2.0 Rating</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="https://dave.xn--tckwe/posts/hotel-tonight-prices/">
+                  <span class="button__text">When should I book my room on Hotel Tonight?</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+
+    
+      
+        
+
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">dave</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://dave.xn--tckwe/assets/main.js"></script>
+<script src="https://dave.xn--tckwe/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

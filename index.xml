@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dave&#39;s site</title>
+    
+    
+    
+    <link>https://dave.xn--tckwe/</link>
+    <description>Recent content on dave&#39;s site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Jan 2021 10:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dave.xn--tckwe/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reverse Engineering the HLTV 2.0 Rating</title>
+      <link>https://dave.xn--tckwe/posts/reverse-engineering-hltv-rating/</link>
+      <pubDate>Sat, 09 Jan 2021 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.xn--tckwe/posts/reverse-engineering-hltv-rating/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://dave.xn--tckwe/img/csgo.jpg&#34;/&gt;
+          
+        
+        
+        
+          Ever since HLTV released their new rating 2.0, they kept the formula behind the rating a secret.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Visualizing the Panama Papers</title>
+      <link>https://dave.xn--tckwe/posts/visualizing-data/</link>
+      <pubDate>Mon, 02 Mar 2020 10:30:00 +0000</pubDate>
+      
+      <guid>https://dave.xn--tckwe/posts/visualizing-data/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://dave.xn--tckwe/img/money.jpg&#34;/&gt;
+          
+        
+        
+        
+          Using Dash by Plotly to visualize the panama papers based on jurisdiction popularity and companies opened...
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>When should I book my room on Hotel Tonight?</title>
+      <link>https://dave.xn--tckwe/posts/hotel-tonight-prices/</link>
+      <pubDate>Sun, 16 Feb 2020 21:00:00 +0000</pubDate>
+      
+      <guid>https://dave.xn--tckwe/posts/hotel-tonight-prices/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://dave.xn--tckwe/img/hotel.jpg&#34;/&gt;
+          
+        
+        
+        
+          I really like Hotel Tonight, but I always wonder if I should wait for prices to drop further, so I scraped their site...
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Python, GAs, TSP and a lot of Optimization</title>
+      <link>https://dave.xn--tckwe/posts/genetic-algorithm-tsp/</link>
+      <pubDate>Mon, 03 Feb 2020 11:00:00 +0000</pubDate>
+      
+      <guid>https://dave.xn--tckwe/posts/genetic-algorithm-tsp/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://dave.xn--tckwe/img/network.jpg&#34;/&gt;
+          
+        
+        
+        
+          A python library for constraint optimization problems with a number of implementations for genetic algorithm operators...
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Binary Transformation</title>
+      <link>https://dave.xn--tckwe/posts/binary-transformation/</link>
+      <pubDate>Sun, 15 Sep 2019 21:31:10 +0100</pubDate>
+      
+      <guid>https://dave.xn--tckwe/posts/binary-transformation/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://dave.xn--tckwe/img/binary.webp&#34;/&gt;
+          
+        
+        
+        
+          Notes on how to turn a base10 number into a binary, base2, one. Small python script to turn a randomly generated base10 number into binary. While procrastinating on the web...
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>hello, this is dave</title>
+      <link>https://dave.xn--tckwe/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dave.xn--tckwe/about/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Based out of LX (Lisboa).
+Sporadically writes some posts here.
+Online presence:
+GitHub: https://github.com/daveai
+Twitter: https://twitter.com/davebit_
+LinkedIn: https://www.linkedin.com/in/daveai
+You can contact me at dave.gl (just replace the a for an @)
+&amp;mdash;&amp;ndash;BEGIN PGP PUBLIC KEY BLOCK&amp;mdash;&amp;ndash;
+mQENBFinUyEBCADDtNOrYJGfd1kfbatj1J4HsKuZwAnvvb9RFkB2qOqMUxKZ7i8X tcnFUdjbJekPf82T34/a+csRZu8TgOzWrlj0LlQdXKo5ZN+UypE9r2LGXqKdECOY sgvhS1TsmM73IrzxgmBewfw4N/72ouXHSRJAYzMjr+0JoSXbjaPwlWJpSRUQRMdp 3349UOSjHOBamj74usp2xWuIO0VXKt0CotQSq/eWPcCEs/h/5KlQRIhtwMDzISul RAOD/tRln5hMOcFFX/MGtCKwvApbRhaiu1PwsEIYWopkjCy28y9yEKNivFWhmc2a dWi+HHtNDezM8Yaq7cI1mpPq4ggmC544rst1ABEBAAG0EWRhdmViaXQgPGRAdmUu Z2w+iQE5BBMBCAAjBQJYp1MhAhsDBwsJCAcDAgEGFQgCCQoLBBYCAwECHgECF4AA CgkQ1NjEsOLngYrIOAgAk0u90YBBCyuXb3bUx7OzPZjWyv98gMG+fN2Am6etlJYf 88nk96+faBFkQWVAp9UxHvOO86uklsot3uAYV7lulgNjFPq8hQz/PrdPcdn1gG4Z cFBJ2oN9ggzdD0VveYh9p2WWOtrpjCN0QcRFpQO8OltqXOv4w5H0r8pcyNbzmYyq Fe65+Pcxyf7+etgUBaWiAnHzXcEdlvd5iBX9WmUQDCvYcpR9mbbMEhrbvZcTEnSW g1G+J8YzWL8asbsOtsnCfByBG2uB2TrxVd+ji3ZaEVA5XQLaoki1PmyaSm5dv2Ek +lXXhyIczZLakct2/f6lcRcYYWdYRWd8VgaSvh2nqLkBDQRYp1MhAQgAppsUYJF7 2I4Gas++4jCUXPf9UHzZvmHSsysX8xGEjIVezAR4GXdYZR38DV4EW8F5C5dPjx6Z jpegjqWfqiPRpn/sa2YY8wB6n0SjQ+33EG1cSskhZyPV0na4NRxx5cvQU73UnjXY CaCUVSGdFuQ3kUGMUN8xMIWIgAAyDNO9pCBbiXp3qvckQyUK3Y9g6tNBe6lA9dvW c6zRZFjWYbcO9a4sxNvPPwQVZNbBxa/np/uF3XxBbdrlCGjVDwN0HbWmGBhNnoyR wv3rz+mB+cD9JnDYkF2OOU5CzG6VNjqc8tpmkVlZexnUqSe29KzIcxnEtJmpVU8s 5W6RdE3nW3LwOQARAQABiQEfBBgBCAAJBQJYp1MhAhsMAAoJENTYxLDi54GKJ2II AIomCRYvKNcQJc/DM07Uq8ndaYBEHX+T++Lc9fSyFuICgpAfk98+fc66YX67IMc4 JKZ4PcuQJKGpzZuYwlyXfFbdOz5jhrF1IGz/6UaykD0JlrUb8CRuprJCRFjOLhF7 REw7snLPhnj9M/FyHbIUj6ISYTKiRuXlYenXwtj5cchRyEAu8VoKJlAzC9v4ncpy yqSRoS9Q7/rLdvQ/Kq12sRhNQ4gOlnZSGgW6hPKy7cdDqIe7F29Zz6Ala/kqE+Dg q6wCMNucJYtYMYyJKZDm1dRPrkjKVkg5U82njsrHP7V8lZEUv/aNWesF6uJpiS7q 137MHjJSp9OKije5OA15qL8= =xDlU &amp;mdash;&amp;ndash;END PGP PUBLIC KEY BLOCK&amp;mdash;&amp;ndash;
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>
