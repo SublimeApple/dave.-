@@ -7,7 +7,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="TL;DR:
-0.0071*KAST &#43; 0.3876*KPR &#43; -0.5412*DPR &#43; 0.2285*Impact &#43; 0.0031*ADR ≈ Rating 2.0 The longer tale:
+0.0073*KAST &#43; 0.3591*KPR &#43; -0.5329*DPR &#43; 0.2372*Impact &#43; 0.0032*ADR &#43; 0.1587 ≈ Rating 2.0 The longer tale:
 HLTV upgraded their ratings from 1.0 to 2.0 in the summer of 2017. Unlike the previous rating, HLTV decided to keep the formula of their 2.0 rating confidential. &amp;ldquo;The exact formula won&amp;rsquo;t be public this time&amp;rdquo; says their blog post. Yet, in the same blog post they list the 5 variables they use to calculate it."/>
 <meta name="keywords" content="dave davide montali davebit"/>
 <meta name="robots" content="noodp"/>
@@ -144,7 +144,7 @@ HLTV upgraded their ratings from 1.0 to 2.0 in the summer of 2017. Unlike the pr
     <div class="post-content">
       
       <p>TL;DR:</p>
-<pre><code>0.0071*KAST + 0.3876*KPR + -0.5412*DPR + 0.2285*Impact + 0.0031*ADR ≈ Rating 2.0
+<pre><code>0.0073*KAST + 0.3591*KPR + -0.5329*DPR + 0.2372*Impact + 0.0032*ADR + 0.1587 ≈ Rating 2.0
 </code></pre><p>The longer tale:</p>
 <p>HLTV upgraded their ratings from 1.0 to 2.0 in the summer of 2017. Unlike the previous rating, HLTV decided to keep the formula of their 2.0 rating confidential. &ldquo;The exact formula won&rsquo;t be public this time&rdquo; says their blog post. Yet, in the same blog post they list the 5 variables they use to calculate it.</p>
 <p><img src="/img/hltv2/rating2.webp" alt=""></p>
@@ -209,10 +209,11 @@ print(f'MAE:{mean_absolute_error(y_test, y_pred)}')
 ___________________________________________________________________________
 OUTPUT
 
-Coefficients: [ 0.00713257  0.38761409 -0.54120879  0.2285406   0.00318927]
-R2 score:0.9950699964985316
-RMSE:0.0037901282685042156
-MAE:0.0029042242484068797
+Coefficients: [ 0.00738764  0.35912389 -0.5329508   0.2372603   0.0032397 ]
+Intercept: 0.15872723249055132
+R2 score:0.9950978389640099
+RMSE:0.004564354645876378
+MAE:0.0020833333333333307
 </code></pre><p>Hold up. That doesn&rsquo;t look too bad. A couple of things that stand out to me are the 0.995 R2 score, that both error measures are smaller than 0.01, and that we have a negative coefficient? Let&rsquo;s take a look further at what&rsquo;s going on there.</p>
 <p>The errors are interesting, because ratings only have 2 decimal places. So maybe if we round our predictions to 2 decimal places, we&rsquo;ll get a better result? Oh - and I just checked the data and the third variable - which was given a negative coefficient - is deaths per round. That makes sense, the less you die the better your rating.</p>
 <p>Let&rsquo;s print some of the test data, to visually see our errors:</p>
@@ -243,7 +244,7 @@ Actual: 1.02; Predicted: 1.02; Error: 0.0
 Actual: 1.08; Predicted: 1.08; Error: 0.0
 Actual: 1.19; Predicted: 1.19; Error: 0.0
 </code></pre><p>That looks pretty good. We&rsquo;re only ever wrong by 0.01 - but overall we calculate most of the ratings correctly. As we saw above, HLTV claims that ratings are calculated differently for the CT and T side, which might explain why we don&rsquo;t have 100% correct predictions. But that&rsquo;s pretty decent for my standards, so here&rsquo;s the secret HLTV 2.0 formula (I slightly rounded the coefficients down to make it prettier - full coefs are above):</p>
-<pre><code>0.0071*KAST + 0.3876*KPR + -0.5412*DPR + 0.2285*Impact + 0.0031*ADR = Rating 2.0
+<pre><code>0.0073*KAST + 0.3591*KPR + -0.5329*DPR + 0.2372*Impact + 0.0032*ADR + 0.1587 = Rating 2.0
 </code></pre><p>So how do you calculate your own 2.0 rating? Let&rsquo;s take a look at the variables:</p>
 <ul>
 <li>KAST: Percentage of rounds in which the player either had a kill, assist, survived or was traded.</li>
@@ -254,7 +255,7 @@ Actual: 1.19; Predicted: 1.19; Error: 0.0
 </ul>
 <p>While KPR / DPR / ADR are available directly in-game, KAST and Impact are not. KAST can be hand calculated, but some free CSGO statistic services also offer KAST as a free stat.</p>
 <p>A dirty formula for measuring Impact, obtained with similar methods as above, plus some feature selection, is:</p>
-<pre><code>2.13*KPR + 0.42*Assist per Round ≈ Impact
+<pre><code>2.13*KPR + 0.42*Assist per Round -0.41 ≈ Impact
 </code></pre><p>Note that HLTV likely calculates statistics based on much more granular data, including data from single rounds and in relation to how other teammates perform. Here, we are trying to approximate these data points as easily as possible.</p>
 
     </div>
