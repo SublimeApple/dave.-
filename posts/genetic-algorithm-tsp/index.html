@@ -2,27 +2,48 @@
 <html lang="en">
   <head>
     
-      <title>Python, GAs, TSP and a lot of Optimization :: dave&#39;s site</title>
+      <title>
+        Python, GAs, TSP and a lot of Optimization ::
+        dave&#39;s site
+      </title>
     
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Together with some friends we built a python library for Genetic Algorithms (GAs), specifically aimed at constraint optimization problems. The core focus was on building a well-performing GA for solving the Travelling Salesman Problem (TSP). TSP is a commonly studied NP-hard problem in computational optimization; essentially, given a list of cities we need to determine the best possible route - the shortest possible route.
-The code can be found at: https://github."/>
-<meta name="keywords" content="dave davide montali davebit"/>
-<meta name="robots" content="noodp"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Together with some friends we built a python library for Genetic Algorithms (GAs), specifically aimed at constraint optimization problems. The core focus was on building a well-performing GA for solving the Travelling Salesman Problem (TSP). TSP is a commonly studied NP-hard problem in computational optimization; essentially, given a list of cities we need to determine the best possible route - the shortest possible route.
+The code can be found at: https://github."
+/>
+<meta
+  name="keywords"
+  content="dave davide montali davebit"
+/>
+<meta name="robots" content="noodp" />
 <link rel="canonical" href="https://dave.xn--tckwe/posts/genetic-algorithm-tsp/" />
 
 
 
 
 
-<link rel="stylesheet" href="https://dave.xn--tckwe/assets/style.css">
+<link rel="stylesheet" href="https://dave.xn--tckwe/assets/style.css" />
 
-<link rel="stylesheet" href="https://dave.xn--tckwe/style.css">
+<link rel="stylesheet" href="https://dave.xn--tckwe/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://dave.xn--tckwe/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://dave.xn--tckwe/img/favicon.png">
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://dave.xn--tckwe/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://dave.xn--tckwe/img/favicon.png" />
+
+
+<link href="https://dave.xn--tckwe/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://dave.xn--tckwe/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://dave.xn--tckwe/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://dave.xn--tckwe/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://dave.xn--tckwe/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://dave.xn--tckwe/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -37,10 +58,10 @@ The code can be found at: https://github."/>
 <meta property="og:title" content="Python, GAs, TSP and a lot of Optimization" />
 <meta property="og:description" content="A python library for constraint optimization problems with a number of implementations for genetic algorithm operators..." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dave.xn--tckwe/posts/genetic-algorithm-tsp/" />
-<meta property="og:image" content="https://dave.xn--tckwe/img/network.jpg" />
+<meta property="og:url" content="https://dave.xn--tckwe/posts/genetic-algorithm-tsp/" /><meta property="og:image" content="https://dave.xn--tckwe/img/network.jpg" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-02-03T11:00:00+00:00" />
 <meta property="article:modified_time" content="2020-02-03T11:00:00+00:00" /><meta property="og:site_name" content="dave&#39;s site" />
+
 
 
 
@@ -52,13 +73,19 @@ The code can be found at: https://github."/>
     <div class="container">
       <header class="header">
   <span class="header__inner">
-    <a href="/" class="logo" style="text-decoration: none;">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
   
     <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
 </svg>
 </span>
-    <span class="logo__text">dave</span>
+    <span class="logo__text"
+      >dave</span
+    >
     <span class="logo__cursor"></span>
   
 </a>
@@ -74,7 +101,7 @@ The code can be found at: https://github."/>
         
       
       
-    
+      
   </ul>
 
   <ul class="menu__inner menu__inner--mobile">
@@ -88,16 +115,25 @@ The code can be found at: https://github."/>
 
         <span class="menu-trigger">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
           </svg>
         </span>
       
       <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
 </svg>
 
       </span>
@@ -112,7 +148,7 @@ The code can be found at: https://github."/>
   
 
   <div class="post">
-    <h1 class="post-title"><a href="https://dave.xn--tckwe/posts/genetic-algorithm-tsp/">Python, GAs, TSP and a lot of Optimization</a></h1>
+    <h1 class="post-title">Python, GAs, TSP and a lot of Optimization</h1>
     <div class="post-meta">
       
         <span class="post-date">
@@ -124,7 +160,12 @@ The code can be found at: https://github."/>
         
       
 
-      <span class="post-author">— Written by Dave</span>
+      
+        <span class="post-author"
+          >— Written by Dave</span
+        >
+
+
       
     </div>
 
@@ -132,12 +173,13 @@ The code can be found at: https://github."/>
 
     
       <figure class="post-cover">
-        
-          <img src="https://dave.xn--tckwe/img/network.jpg" alt="Python, GAs, TSP and a lot of Optimization" />
-        
+  
+    <img src="https://dave.xn--tckwe/img/network.jpg" alt="Python, GAs, TSP and a lot of Optimization"/>
+  
 
-        
-      </figure>
+  
+</figure>
+
     
 
     <div class="post-content">
@@ -148,21 +190,21 @@ The code can be found at: https://github."/>
 <p>We built our GAs on top of the core framework provided by <a href="https://www.linkedin.com/in/fernando-peres-origamiai/">Fernando Perez</a></p>
 <p>Firstly, we set down the decision variables for the TSP GA. Classic TSP determines that cities should be visited only once and that the salesman return to their original destination at the end of the trip. To encode this we simply used a permutation of the length of total cities. We include the &ldquo;home-trip&rdquo; in the fitness function (the function which calculates the distance, which in our case represents the fitness of the solution). Given that we want to minimize the distance, it&rsquo;s important to note that all the methods we implemented work with both minimization and maximization constraint optimization problems.</p>
 <p>For the city data we implemented our GA to work both with a matrix of coordinates, as well as simply supplying the coordinates of the cities - from which we then build a matrix of coordinates. From our research in the literature, TSP doesn&rsquo;t typically specify a starting city, which means there are at least as many global solutions as there are cities - as the global optima permutation would have the same fitness starting at any city within that permutation.</p>
-<pre><code>from scipy.spatial.distance import squareform, pdist
+<pre tabindex="0"><code>from scipy.spatial.distance import squareform, pdist
 import numpy
 
 def coordsToDist(coords):
-    &quot;&quot;&quot;
+    &#34;&#34;&#34;
     Util function to transform a table of coords into a matrix of distances
     param coords: list of N rows and 2 columns (x and y)
     return matrix of NxN distances
-    &quot;&quot;&quot;
+    &#34;&#34;&#34;
     coordinates_array = numpy.array(coords)
     dist_array = pdist(coordinates_array)
     return squareform(dist_array)
 </code></pre><p>To initialize a &ldquo;tour&rdquo; we implemented two methods: a purely stochastic one, where we simply create a random permutation, as well as a deterministic one, which creates a tour by selecting a random city and then always appending its nearest available neighbour. The only constraint of TSP is that a tour be a permutation.</p>
-<pre><code>def build_solution(self):
-    &quot;&quot;&quot;Builds a linear solution for TSP with a specific order of cities&quot;&quot;&quot;
+<pre tabindex="0"><code>def build_solution(self):
+    &#34;&#34;&#34;Builds a linear solution for TSP with a specific order of cities&#34;&#34;&#34;
     solution_representation = []
     encoding_data = self._encoding.encoding_data
 
@@ -189,17 +231,17 @@ def coordsToDist(coords):
 As we can see the GA comes close to global optima in most datasets, and it does so within seconds.</p>
 <p><img src="/img/tsp_bench.png" alt=""></p>
 <p>We also coded a GA Optimizer GA (a GA to optimize the parameters of our TSP GA), which ran over a number of hours to fine tune the parameters of our TSP GA, the optimal parameters we found are these:</p>
-<pre><code>Parameters: {
-    &quot;Population-Size&quot;: 20,
-    &quot;Number-of-Generations&quot;: 1000,
-    &quot;Crossover-Probability&quot;: 0.1,
-    &quot;Mutation-Probability&quot;: 0.8,
-    &quot;Initialization-Approach&quot;: initialize_using_hc,
-    &quot;Selection-Approach&quot;: TournamentSelection,
-    &quot;Tournament-Size&quot;: 20,
-    &quot;Crossover-Approach&quot;: pmx_crossover, 
-    Mutation-Aproach&quot;: inversion_mutation,
-    &quot;Replacement-Approach&quot;: elitism_replacement}
+<pre tabindex="0"><code>Parameters: {
+    &#34;Population-Size&#34;: 20,
+    &#34;Number-of-Generations&#34;: 1000,
+    &#34;Crossover-Probability&#34;: 0.1,
+    &#34;Mutation-Probability&#34;: 0.8,
+    &#34;Initialization-Approach&#34;: initialize_using_hc,
+    &#34;Selection-Approach&#34;: TournamentSelection,
+    &#34;Tournament-Size&#34;: 20,
+    &#34;Crossover-Approach&#34;: pmx_crossover, 
+    Mutation-Aproach&#34;: inversion_mutation,
+    &#34;Replacement-Approach&#34;: elitism_replacement}
 </code></pre><p>It intuitively makes sense that crossover has a low probability given that a tour makes gradual improvements through mutations, and crossovers move more cities around. Imagine for instance we&rsquo;re at the final generations and have a decent fitness, it&rsquo;s more likely we can &ldquo;close an edge&rdquo; through mutation and increase fitness than by using crossover which will alter the position of many cities. This holds true even with specific crossover techniques aimed specifically at TSP.</p>
 <p>For further reading on TSP and GAs I can recommend:</p>
 <p>Dueck, G. and Scheuer, T. (1990). Threshold accepting: A general purpose optimization algorithm appearing superior to simulated annealing. Journal of Computational Physics, 90(1), pp.161-175.</p>
@@ -212,7 +254,9 @@ As we can see the GA comes close to global optima in most datasets, and it does 
       
         <div class="pagination">
           <div class="pagination__title">
-            <span class="pagination__title-h">Read other posts</span>
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
             <hr />
           </div>
           <div class="pagination__buttons">
@@ -225,18 +269,10 @@ As we can see the GA comes close to global optima in most datasets, and it does 
               </span>
             
             
-              <span class="button next">
-                <a href="https://dave.xn--tckwe/posts/binary-transformation/">
-                  <span class="button__text">Binary Transformation</span>
-                  <span class="button__icon">→</span>
-                </a>
-              </span>
-            
           </div>
         </div>
       
     
-
 
     
       
@@ -244,8 +280,7 @@ As we can see the GA comes close to global optima in most datasets, and it does 
 
       
     
-
-    </div>
+  </div>
 
       </div>
 
@@ -253,20 +288,32 @@ As we can see the GA comes close to global optima in most datasets, and it does 
         <footer class="footer">
   <div class="footer__inner">
     
-      <a href="/" class="logo" style="text-decoration: none;">
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
   
     <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
 </svg>
 </span>
-    <span class="logo__text">dave</span>
+    <span class="logo__text"
+      >dave</span
+    >
     <span class="logo__cursor"></span>
   
 </a>
 
       <div class="copyright">
-        <span>© 2021 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+        <span
+          >© 2022 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
       </div>
     
   </div>

@@ -9,10 +9,29 @@
     <description>Recent content in Posts on dave&#39;s site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Jan 2021 10:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Oct 2022 08:00:00 -0500</lastBuildDate>
     
 	<atom:link href="https://dave.xn--tckwe/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>$80M Available to Withdraw</title>
+      <link>https://dave.xn--tckwe/posts/exploit/</link>
+      <pubDate>Thu, 20 Oct 2022 08:00:00 -0500</pubDate>
+      
+      <guid>https://dave.xn--tckwe/posts/exploit/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://dave.xn--tckwe/img/usd.png&#34;/&gt;
+          
+        
+        
+        
+          A white hat attack vector reported to DXdao, with over $80M in the Treasury accessible through the exploit...
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Reverse Engineering the HLTV 2.0 Rating</title>
@@ -85,25 +104,6 @@
         
         
           A python library for constraint optimization problems with a number of implementations for genetic algorithm operators...
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Binary Transformation</title>
-      <link>https://dave.xn--tckwe/posts/binary-transformation/</link>
-      <pubDate>Sun, 15 Sep 2019 21:31:10 +0100</pubDate>
-      
-      <guid>https://dave.xn--tckwe/posts/binary-transformation/</guid>
-      <description>
-        
-          &lt;img src=&#34;https://dave.xn--tckwe/img/binary.webp&#34;/&gt;
-          
-        
-        
-        
-          Notes on how to turn a base10 number into a binary, base2, one. Small python script to turn a randomly generated base10 number into binary. While procrastinating on the web...
           
         
         </description>

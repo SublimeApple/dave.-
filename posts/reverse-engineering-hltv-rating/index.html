@@ -2,28 +2,49 @@
 <html lang="en">
   <head>
     
-      <title>Reverse Engineering the HLTV 2.0 Rating :: dave&#39;s site</title>
+      <title>
+        Reverse Engineering the HLTV 2.0 Rating ::
+        dave&#39;s site
+      </title>
     
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="TL;DR:
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="TL;DR:
 0.0073*KAST &#43; 0.3591*KPR &#43; -0.5329*DPR &#43; 0.2372*Impact &#43; 0.0032*ADR &#43; 0.1587 ≈ Rating 2.0 The longer tale:
-HLTV upgraded their ratings from 1.0 to 2.0 in the summer of 2017. Unlike the previous rating, HLTV decided to keep the formula of their 2.0 rating confidential. &amp;ldquo;The exact formula won&amp;rsquo;t be public this time&amp;rdquo; says their blog post. Yet, in the same blog post they list the 5 variables they use to calculate it."/>
-<meta name="keywords" content="dave davide montali davebit"/>
-<meta name="robots" content="noodp"/>
+HLTV upgraded their ratings from 1.0 to 2.0 in the summer of 2017. Unlike the previous rating, HLTV decided to keep the formula of their 2.0 rating confidential. &amp;ldquo;The exact formula won&amp;rsquo;t be public this time&amp;rdquo; says their blog post. Yet, in the same blog post they list the 5 variables they use to calculate it."
+/>
+<meta
+  name="keywords"
+  content="dave davide montali davebit"
+/>
+<meta name="robots" content="noodp" />
 <link rel="canonical" href="https://dave.xn--tckwe/posts/reverse-engineering-hltv-rating/" />
 
 
 
 
 
-<link rel="stylesheet" href="https://dave.xn--tckwe/assets/style.css">
+<link rel="stylesheet" href="https://dave.xn--tckwe/assets/style.css" />
 
-<link rel="stylesheet" href="https://dave.xn--tckwe/style.css">
+<link rel="stylesheet" href="https://dave.xn--tckwe/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://dave.xn--tckwe/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://dave.xn--tckwe/img/favicon.png">
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://dave.xn--tckwe/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://dave.xn--tckwe/img/favicon.png" />
+
+
+<link href="https://dave.xn--tckwe/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://dave.xn--tckwe/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://dave.xn--tckwe/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://dave.xn--tckwe/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://dave.xn--tckwe/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://dave.xn--tckwe/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -38,10 +59,10 @@ HLTV upgraded their ratings from 1.0 to 2.0 in the summer of 2017. Unlike the pr
 <meta property="og:title" content="Reverse Engineering the HLTV 2.0 Rating" />
 <meta property="og:description" content="Ever since HLTV released their new rating 2.0, they kept the formula behind the rating a secret." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dave.xn--tckwe/posts/reverse-engineering-hltv-rating/" />
-<meta property="og:image" content="https://dave.xn--tckwe/img/csgo.jpg" />
+<meta property="og:url" content="https://dave.xn--tckwe/posts/reverse-engineering-hltv-rating/" /><meta property="og:image" content="https://dave.xn--tckwe/img/csgo.jpg" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-01-09T10:00:00+00:00" />
 <meta property="article:modified_time" content="2021-01-09T10:00:00+00:00" /><meta property="og:site_name" content="dave&#39;s site" />
+
 
 
 
@@ -53,13 +74,19 @@ HLTV upgraded their ratings from 1.0 to 2.0 in the summer of 2017. Unlike the pr
     <div class="container">
       <header class="header">
   <span class="header__inner">
-    <a href="/" class="logo" style="text-decoration: none;">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
   
     <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
 </svg>
 </span>
-    <span class="logo__text">dave</span>
+    <span class="logo__text"
+      >dave</span
+    >
     <span class="logo__cursor"></span>
   
 </a>
@@ -75,7 +102,7 @@ HLTV upgraded their ratings from 1.0 to 2.0 in the summer of 2017. Unlike the pr
         
       
       
-    
+      
   </ul>
 
   <ul class="menu__inner menu__inner--mobile">
@@ -89,16 +116,25 @@ HLTV upgraded their ratings from 1.0 to 2.0 in the summer of 2017. Unlike the pr
 
         <span class="menu-trigger">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
           </svg>
         </span>
       
       <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
 </svg>
 
       </span>
@@ -113,7 +149,7 @@ HLTV upgraded their ratings from 1.0 to 2.0 in the summer of 2017. Unlike the pr
   
 
   <div class="post">
-    <h1 class="post-title"><a href="https://dave.xn--tckwe/posts/reverse-engineering-hltv-rating/">Reverse Engineering the HLTV 2.0 Rating</a></h1>
+    <h1 class="post-title">Reverse Engineering the HLTV 2.0 Rating</h1>
     <div class="post-meta">
       
         <span class="post-date">
@@ -125,7 +161,12 @@ HLTV upgraded their ratings from 1.0 to 2.0 in the summer of 2017. Unlike the pr
         
       
 
-      <span class="post-author">— Written by Dave</span>
+      
+        <span class="post-author"
+          >— Written by Dave</span
+        >
+
+
       
     </div>
 
@@ -133,64 +174,65 @@ HLTV upgraded their ratings from 1.0 to 2.0 in the summer of 2017. Unlike the pr
 
     
       <figure class="post-cover">
-        
-          <img src="https://dave.xn--tckwe/img/csgo.jpg" alt="Reverse Engineering the HLTV 2.0 Rating" />
-        
+  
+    <img src="https://dave.xn--tckwe/img/csgo.jpg" alt="Reverse Engineering the HLTV 2.0 Rating"/>
+  
 
-        
-      </figure>
+  
+</figure>
+
     
 
     <div class="post-content">
       
       <p>TL;DR:</p>
-<pre><code>0.0073*KAST + 0.3591*KPR + -0.5329*DPR + 0.2372*Impact + 0.0032*ADR + 0.1587 ≈ Rating 2.0
+<pre tabindex="0"><code>0.0073*KAST + 0.3591*KPR + -0.5329*DPR + 0.2372*Impact + 0.0032*ADR + 0.1587 ≈ Rating 2.0
 </code></pre><p>The longer tale:</p>
 <p>HLTV upgraded their ratings from 1.0 to 2.0 in the summer of 2017. Unlike the previous rating, HLTV decided to keep the formula of their 2.0 rating confidential. &ldquo;The exact formula won&rsquo;t be public this time&rdquo; says their blog post. Yet, in the same blog post they list the 5 variables they use to calculate it.</p>
 <p><img src="/img/hltv2/rating2.webp" alt=""></p>
 <p>I googled away, to see if someone had already reverse-engineered the formula - yet to my surprise I found little online. In fact, when googling I only found HLTV user-content asking about the formula. It almost feels as if there&rsquo;s some mystery around the secret HLTV 2.0 rating formula.</p>
 <p>After some thinking, I figured the formula must be a linear equation. So with enough data, I should be able to find a simple linear model which can estimate the coefficients of the variables. In other words, we know the variables they use, we&rsquo;ll assume they just add them all together with a certain weight for each variable. They do say it&rsquo;s calculated differently for CT and T side - but that complicates things, so let&rsquo;s just ignore that for now.</p>
 <p>First of all, we need some data to try and reverse the formula. I simply used an interactive <a href="https://scrapy.org/">scrapy</a> shell to extract the links to each player profile from: <a href="https://www.hltv.org/stats/players">https://www.hltv.org/stats/players</a>. Once I had the links for the players, I simply built a small spider to crawl the following data from the players profiles: Player Name, Rating Version (some had their 1.0 rating), Rating, KAST, KPR, DPR, Impact, and ADR. That looks something like this:</p>
-<pre><code>import scrapy
+<pre tabindex="0"><code>import scrapy
 import pandas as pd
 
-links = pd.read_csv('player_links.csv')
-links.columns = ['link']
+links = pd.read_csv(&#39;player_links.csv&#39;)
+links.columns = [&#39;link&#39;]
 
 links = list(links.link)
 
 class HLTVSpider(scrapy.Spider):
-    name = 'ratings'
+    name = &#39;ratings&#39;
     start_urls = links
 
     custom_settings = {
-        'DOWNLOAD_DELAY': 1,
+        &#39;DOWNLOAD_DELAY&#39;: 1,
     }
 
 
     def parse(self, response):
         yield {
-            'player': response.xpath('/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[1]/h1/text()').get(),
-            'ratingVersion': response.xpath('/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[2]/div[1]/div[1]/text()').get(),
-            'rating': response.xpath('/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[2]/div[1]/div[2]/div[1]/text()').get(),
-            'kast': response.xpath('/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[2]/div[3]/div[2]/div[1]/text()').get(),
-            'kpr': response.xpath('/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[3]/div[3]/div[2]/div[1]/text()').get(),
-            'dpr': response.xpath('/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[2]/div[2]/div[2]/div[1]/text()').get(),
-            'impact': response.xpath('/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[3]/div[1]/div[2]/div[1]/text()').get(),
-            'adr': response.xpath('/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[3]/div[2]/div[2]/div[1]/text()').get(),
+            &#39;player&#39;: response.xpath(&#39;/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[1]/h1/text()&#39;).get(),
+            &#39;ratingVersion&#39;: response.xpath(&#39;/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[2]/div[1]/div[1]/text()&#39;).get(),
+            &#39;rating&#39;: response.xpath(&#39;/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[2]/div[1]/div[2]/div[1]/text()&#39;).get(),
+            &#39;kast&#39;: response.xpath(&#39;/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[2]/div[3]/div[2]/div[1]/text()&#39;).get(),
+            &#39;kpr&#39;: response.xpath(&#39;/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[3]/div[3]/div[2]/div[1]/text()&#39;).get(),
+            &#39;dpr&#39;: response.xpath(&#39;/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[2]/div[2]/div[2]/div[1]/text()&#39;).get(),
+            &#39;impact&#39;: response.xpath(&#39;/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[3]/div[1]/div[2]/div[1]/text()&#39;).get(),
+            &#39;adr&#39;: response.xpath(&#39;/html/body/div[2]/div/div[2]/div[1]/div[2]/div[6]/div[2]/div[3]/div[2]/div[2]/div[1]/text()&#39;).get(),
         }
-</code></pre><p>Great - now we have some initial data to work with. First of all, let&rsquo;s drop all players with 1.0 rating as we don&rsquo;t care about that rating. The data needs some minor cleaning, but that&rsquo;s done quickly. We just want all our data to be numbers - so we need to remove the % sign from KAST. I clean data in an interactive shell, so I don&rsquo;t have the snippet. But something as simple as .rstrip('%') should do the job.</p>
+</code></pre><p>Great - now we have some initial data to work with. First of all, let&rsquo;s drop all players with 1.0 rating as we don&rsquo;t care about that rating. The data needs some minor cleaning, but that&rsquo;s done quickly. We just want all our data to be numbers - so we need to remove the % sign from KAST. I clean data in an interactive shell, so I don&rsquo;t have the snippet. But something as simple as .rstrip(&rsquo;%&rsquo;) should do the job.</p>
 <p>Sweet, we have clean data now. Let&rsquo;s move on.</p>
 <p>We&rsquo;ve assumed a linear function, so let&rsquo;s try to simply regress the data with a linear regression - the easiest and simplest way to approach this. While simple, linear regression will give us coefficients which are those weights we want to multiply our variables by before adding them together. In other words, it makes everything very interpretable. We can explore more complex models later on, if required.</p>
-<pre><code>import pandas as pd
+<pre tabindex="0"><code>import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, r2_score, mean_squared_error
 
-df = pd.read_csv('ratings2.csv')
+df = pd.read_csv(&#39;ratings2.csv&#39;)
 
-y = df['rating']
-X = df.drop(['rating', 'player', 'ratingVersion'], axis=1)
+y = df[&#39;rating&#39;]
+X = df.drop([&#39;rating&#39;, &#39;player&#39;, &#39;ratingVersion&#39;], axis=1)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42,
                                                     test_size=0.2)
@@ -200,11 +242,11 @@ regr.fit(X_train, y_train)
 
 y_pred = regr.predict(X_test)
 
-print(f'Coefficients: {regr.coef_}')
+print(f&#39;Coefficients: {regr.coef_}&#39;)
 
-print(f'R2 score:{r2_score(y_test, y_pred)}')
-print(f'RMSE:{mean_squared_error(y_test, y_pred, squared=False)}')
-print(f'MAE:{mean_absolute_error(y_test, y_pred)}')
+print(f&#39;R2 score:{r2_score(y_test, y_pred)}&#39;)
+print(f&#39;RMSE:{mean_squared_error(y_test, y_pred, squared=False)}&#39;)
+print(f&#39;MAE:{mean_absolute_error(y_test, y_pred)}&#39;)
 
 ___________________________________________________________________________
 OUTPUT
@@ -217,7 +259,7 @@ MAE:0.0020833333333333307
 </code></pre><p>Hold up. That doesn&rsquo;t look too bad. A couple of things that stand out to me are the 0.995 R2 score, that both error measures are smaller than 0.01, and that we have a negative coefficient? Let&rsquo;s take a look further at what&rsquo;s going on there.</p>
 <p>The errors are interesting, because ratings only have 2 decimal places. So maybe if we round our predictions to 2 decimal places, we&rsquo;ll get a better result? Oh - and I just checked the data and the third variable - which was given a negative coefficient - is deaths per round. That makes sense, the less you die the better your rating.</p>
 <p>Let&rsquo;s print some of the test data, to visually see our errors:</p>
-<pre><code>Actual: 1.1; Predicted: 1.1; Error: 0.0
+<pre tabindex="0"><code>Actual: 1.1; Predicted: 1.1; Error: 0.0
 Actual: 0.99; Predicted: 0.99; Error: 0.0
 Actual: 1.04; Predicted: 1.04; Error: 0.0
 Actual: 1.04; Predicted: 1.04; Error: 0.0
@@ -244,7 +286,7 @@ Actual: 1.02; Predicted: 1.02; Error: 0.0
 Actual: 1.08; Predicted: 1.08; Error: 0.0
 Actual: 1.19; Predicted: 1.19; Error: 0.0
 </code></pre><p>That looks pretty good. We&rsquo;re only ever wrong by 0.01 - but overall we calculate most of the ratings correctly. As we saw above, HLTV claims that ratings are calculated differently for the CT and T side, which might explain why we don&rsquo;t have 100% correct predictions. But that&rsquo;s pretty decent for my standards, so here&rsquo;s the secret HLTV 2.0 formula (I slightly rounded the coefficients down to make it prettier - full coefs are above):</p>
-<pre><code>0.0073*KAST + 0.3591*KPR + -0.5329*DPR + 0.2372*Impact + 0.0032*ADR + 0.1587 = Rating 2.0
+<pre tabindex="0"><code>0.0073*KAST + 0.3591*KPR + -0.5329*DPR + 0.2372*Impact + 0.0032*ADR + 0.1587 = Rating 2.0
 </code></pre><p>So how do you calculate your own 2.0 rating? Let&rsquo;s take a look at the variables:</p>
 <ul>
 <li>KAST: Percentage of rounds in which the player either had a kill, assist, survived or was traded.</li>
@@ -255,7 +297,7 @@ Actual: 1.19; Predicted: 1.19; Error: 0.0
 </ul>
 <p>While KPR / DPR / ADR are available directly in-game, KAST and Impact are not. KAST can be hand calculated, but some free CSGO statistic services also offer KAST as a free stat.</p>
 <p>A dirty formula for measuring Impact, obtained with similar methods as above, plus some feature selection, is:</p>
-<pre><code>2.13*KPR + 0.42*Assist per Round -0.41 ≈ Impact
+<pre tabindex="0"><code>2.13*KPR + 0.42*Assist per Round -0.41 ≈ Impact
 </code></pre><p>Note that HLTV likely calculates statistics based on much more granular data, including data from single rounds and in relation to how other teammates perform. Here, we are trying to approximate these data points as easily as possible.</p>
 
     </div>
@@ -263,10 +305,19 @@ Actual: 1.19; Predicted: 1.19; Error: 0.0
       
         <div class="pagination">
           <div class="pagination__title">
-            <span class="pagination__title-h">Read other posts</span>
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
             <hr />
           </div>
           <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://dave.xn--tckwe/posts/exploit/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">$80M Available to Withdraw</span>
+                </a>
+              </span>
             
             
               <span class="button next">
@@ -281,15 +332,13 @@ Actual: 1.19; Predicted: 1.19; Error: 0.0
       
     
 
-
     
       
         
 
       
     
-
-    </div>
+  </div>
 
       </div>
 
@@ -297,20 +346,32 @@ Actual: 1.19; Predicted: 1.19; Error: 0.0
         <footer class="footer">
   <div class="footer__inner">
     
-      <a href="/" class="logo" style="text-decoration: none;">
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
   
     <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
 </svg>
 </span>
-    <span class="logo__text">dave</span>
+    <span class="logo__text"
+      >dave</span
+    >
     <span class="logo__cursor"></span>
   
 </a>
 
       <div class="copyright">
-        <span>© 2021 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+        <span
+          >© 2022 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
       </div>
     
   </div>
